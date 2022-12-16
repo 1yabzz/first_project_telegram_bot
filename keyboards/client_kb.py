@@ -1,3 +1,4 @@
+"""кнопочки клиента"""
 from aiogram.types import ReplyKeyboardMarkup, KeyboardButton, ReplyKeyboardRemove
 
 # тексты запросов и ответов бота

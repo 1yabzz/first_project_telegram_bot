@@ -20,18 +20,22 @@ kb.row(Button).row(Button2)
 
 @dp.message_handler(text=[START_CMD])
 async def command_start(message: types.Message):
+    """принимает в себя сообщение и отправляет ответ"""
     await bot.send_message(message.from_user.id, GREETING_ANS, reply_markup=kb_client)
 
 @dp.message_handler(text=[HISTORY_CMD])
 async def history_command(message: types.Message):
+    """принимает в себя сообщение и отправляет ответ"""
     await bot.send_message(message.from_user.id, HISTORY_ANS)
 
 @dp.message_handler(text=[PLACE_CMD])
 async def place_command(message: types.Message):
+    """принимает в себя сообщение и отправляет ответ"""
     await bot.send_message(message.from_user.id, PLACE_ANS)
 
 @dp.message_handler(text=[QUESTIONS_CMD])
 async def questions_command(message: types.Message):
+    """принимает в себя сообщение и отправляет ответ"""
     await bot.send_message(message.from_user.id, QUESTIONS_ANS)
 
 @dp.message_handler(text=[ENROLL_CMD])
@@ -45,12 +49,14 @@ async def enroll_command(message: types.Message):
 
 @dp.callback_query_handler(Text(startswith='день '))
 async def w_day(callback: types.CallbackQuery):
+    """отправляет сообщение админу с днем записи и временем"""
     res = callback.data
     await bot.send_message(ADMINS_ID,f'{res}')
 
 
 
 def register_handlers_client(dp: Dispatcher):
+    """регистрация хендлера"""
     dp.register_message_handler (command_start, commands=['start','help'])
     dp.register_message_handler (history_command, text=HISTORY_CMD)
     dp.register_message_handler (place_command, text=PLACE_CMD)

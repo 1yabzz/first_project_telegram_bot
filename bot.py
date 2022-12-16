@@ -3,6 +3,7 @@ from config import dp
 from data_base import sqlite_db
 
 async def on_startup(_):
+    """пишет сообщение в консоль, когда запускаетсся бот и запускает бд"""
     print('Bot started')
     sqlite_db.sql_start()
 

@@ -1,3 +1,4 @@
+"""кнопочуи админа"""
 from aiogram.types import ReplyKeyboardMarkup, KeyboardButton, ReplyKeyboardRemove
 
 # тексты запросов и ответов бота
