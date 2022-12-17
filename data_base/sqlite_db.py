@@ -4,7 +4,7 @@ from config import bot,dp
 def sql_start():
     """подкючаем или создаем файл базы данных, создаем курсор,создаем таблицу если такой не существует"""
     global base, cur
-    base = sq.connect('sistem_adm.dp')
+    base = sq.connect('sistem.dp')
     cur = base.cursor()
     if base:
         print('Data base connected sessions OK!')
